@@ -22,6 +22,10 @@ public class HomePage extends PageBase{
     By followUsTwitter = By.linkText("Twitter");
     By followUsRSS = By.linkText("RSS");
     By followUsYouTube = By.linkText("YouTube");
+    By wishListSuccessMsg = By.cssSelector("div.success>p.content");
+    By wishListButtons = By.cssSelector("button.add-to-wishlist-button");
+    By wishListTab = By.linkText("Wishlist");
+
     public void clickOnRegister(){
         clickOnElement(registerLink);
     }
@@ -72,5 +76,25 @@ public class HomePage extends PageBase{
     public void clickOnFollowUsYouTube (){
         clickOnElement(followUsYouTube);
     }
+    public void clickOnSpecificProductWishList(int productIndex){
+        for (int i=0; i<findElementsList(wishListButtons).size();i++) {
+            if (i == productIndex) {
+                findElementsList(wishListButtons).get(i).click();
+                break;
+            }
+            else
+                continue;
+        }
+    }
+    public String isWishListSuccessMsgDisplayed(){
+        return getElementText(wishListSuccessMsg);
+    }
+    public void waitWishListSuccessMsgBecomesInvisible(){
+        waitElementToBeInvisible(wishListSuccessMsg);
+    }
+    public void clickOnWishListTab(){
+        clickOnElement(wishListTab);
+    }
+
 
 }
