@@ -10,7 +10,7 @@ public class HomePage extends PageBase{
     public HomePage(WebDriver driver) {
         super(driver);
     }
-    // add locator type at the end of the locator name, ex followUsYouTube should be followUsYouTubeButton
+    // add element type at the end of the locator name, ex followUsYouTube should be followUsYouTubeButton
     By registerLink = By.linkText("Register");
     By loginLink = By.linkText("Log in");
     By logoutLink = By.linkText("Log out");
