@@ -1,5 +1,6 @@
 Feature: Wishlist
   Background:
+  # why add scenario outline here ?
   Scenario Outline: verify add product to wishlist
     Given user opens home page
     When user clicks on product with index <index>
