@@ -56,6 +56,7 @@ public class PageBase {
     }
     public void navigateToHomePage() {
         driver.navigate().to("https://demo.nopcommerce.com/");
+        // why using maximize here and you already used it in TestBase ?
         driver.manage().window().maximize();
     }
     public List<WebElement> findElementsList(By elementLocator){
