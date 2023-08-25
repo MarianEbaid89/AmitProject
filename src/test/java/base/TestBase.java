@@ -17,6 +17,7 @@ public class TestBase extends AbstractTestNGCucumberTests {
     public void setup(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        // why commented code here ?
         //driver.navigate().to("https://demo.nopcommerce.com/");
         //driver.manage().window().maximize();
     }
