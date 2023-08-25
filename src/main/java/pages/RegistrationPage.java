@@ -7,6 +7,7 @@ public class RegistrationPage extends PageBase{
     public RegistrationPage(WebDriver driver) {
         super(driver);
     }
+    // add element type at the end of the locator name, ex confirmPassword should be confirmPasswordField
     By genderMale = By.id("gender-male");
     By genderFemale = By.id("gender-female");
     By firstName = By.id("FirstName");
