@@ -78,6 +78,7 @@ public class SD05_FollowUsSteps extends TestBase {
             Assert.assertEquals(driver.getCurrentUrl(), "https://www.youtube.com/user/nopCommerce");
         }
     }
+    // remove commented code
     /*@After
     public void afterScenario(){
         driver.close();
