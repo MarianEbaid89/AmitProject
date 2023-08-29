@@ -22,11 +22,11 @@ public class SD06_WishListSteps extends TestBase {
     }
     @Then("success message should displayed")
     public void success_message_should_displayed() {
-        Assert.assertEquals(homePage.isWishListSuccessMsgDisplayed(),"The product has been added to your wishlist");
+        Assert.assertEquals(homePage.isWishListSuccessMessageDisplayed(),"The product has been added to your wishlist");
     }
     @Given("success message becomes invisible")
     public void success_message_becomes_invisible() {
-        homePage.waitWishListSuccessMsgBecomesInvisible();
+        homePage.waitWishListSuccessMessageBecomesInvisible();
     }
     @When("user clicks on wishlist tab")
     public void user_clicks_on_wishlist_tab() {

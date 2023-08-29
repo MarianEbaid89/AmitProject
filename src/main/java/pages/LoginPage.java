@@ -24,8 +24,8 @@ public class LoginPage extends PageBase{
     public void clickOnLogin(){
         clickOnElement(loginButton);
     }
-    // do not use abbreviations in methods names or locators names, write its names completly like Msg --> Message
-    public boolean isErrorMsgDisplayed(){
+
+    public boolean isErrorMessageDisplayed(){
         return elementIsDisplayed(unsuccessfulLoginError);
     }
 }

@@ -22,40 +22,21 @@ public class SD01_RegistrationTestSteps extends TestBase {
         homePage.clickOnRegister();
         Assert.assertEquals(driver.getTitle(),"nopCommerce demo store. Register");
     }
-    @When("select gender")
-    public void select_gender() {
+
+    @When("user enters registration data with firstName as {string} and lastName as {string} and birthDay as {string} and birthMonth as {string} and birthYear as {string} and email as {string} and company as {string} and password as {string} and confirmedPassword as {string}")
+    public void user_enters_registration_data_with_first_name_as_and_last_name_as_and_birth_day_as_and_birth_month_as_and_birth_year_as_and_email_as_and_company_as_and_password_as_and_confirmed_password_as(String  firstNameText, String lastNameText, String dayText, String monthText, String yearText, String emailText, String companyText, String passwordText, String confirmedPasswordText) {
         registrationPage.selectGender();
+        registrationPage.enterFirstName(firstNameText);
+        registrationPage.enterLastName(lastNameText);
+        registrationPage.selectDayOfBirth(dayText);
+        registrationPage.selectMonthOfBirth(monthText);
+        registrationPage.selectYearOfBirth(yearText);
+        registrationPage.enterEmail(emailText);
+        registrationPage.enterCompany(companyText);
+        registrationPage.enterPassword(passwordText);
+        registrationPage.enterConfirmedPassword(confirmedPasswordText);
     }
-    @When("enter first name")
-    public void enter_first_name() {
-        registrationPage.enterFirstName();
-    }
-    @When("enter last name")
-    public void enter_last_name() {
-        registrationPage.enterLastName();
-    }
-    @When("enter date of birth")
-    public void enter_date_of_birth() {
-        registrationPage.selectDayOfBirth();
-        registrationPage.selectMonthOfBirth();
-        registrationPage.selectYearOfBirth();
-    }
-    @When("enter email")
-    public void enter_email() {
-        registrationPage.enterEmail();
-    }
-    @When("enter company")
-    public void enter_company() {
-        registrationPage.enterCompany();
-    }
-    @When("enter password")
-    public void enter_password() {
-        registrationPage.enterPassword();
-    }
-    @When("enter confirmed password")
-    public void enter_confirmed_password() {
-        registrationPage.enterConfirmPassword();
-    }
+
     @When("clicks on register button")
     public void clicks_on_register_button() {
         registrationPage.clickRegister();
@@ -64,8 +45,4 @@ public class SD01_RegistrationTestSteps extends TestBase {
     public void user_registration_success_message_is_displayed() {
         Assert.assertEquals(registrationPage.getSuccessMessage(),"Your registration completed");
     }
-
-
-
-
 }

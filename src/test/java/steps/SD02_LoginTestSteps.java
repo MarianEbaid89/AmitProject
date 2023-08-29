@@ -49,7 +49,7 @@ public class SD02_LoginTestSteps extends TestBase {
     }
     @Then("user login unsuccessfully")
     public void user_login_unsuccessfully() {
-        Assert.assertTrue(loginPage.isErrorMsgDisplayed());
+        Assert.assertTrue(loginPage.isErrorMessageDisplayed());
     }
 
 }

@@ -20,8 +20,8 @@ public class SD03_CurrenciesTestSteps extends TestBase {
     }
     @Then("verify that prices contain €")
     public void verify_that_prices_contain_€() {
-        for (int i=0; i<homePage.getItemsPrices().size();i++){
-            Assert.assertTrue(homePage.getItemsPrices().get(i).contains("€"));
+        for (int i = 0; i<homePage.getItemsPricesText().size(); i++){
+            Assert.assertTrue(homePage.getItemsPricesText().get(i).contains("€"));
         }
     }
 

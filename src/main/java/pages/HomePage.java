@@ -10,20 +10,20 @@ public class HomePage extends PageBase{
     public HomePage(WebDriver driver) {
         super(driver);
     }
-    // add element type at the end of the locator name, ex followUsYouTube should be followUsYouTubeButton
+
     By registerLink = By.linkText("Register");
     By loginLink = By.linkText("Log in");
     By logoutLink = By.linkText("Log out");
     By myAccountLink = By.linkText("My account");
     By currenciesList = By.id("customerCurrency");
-    By itemsPrices = By.cssSelector("div.prices");
+    By itemsPricesText = By.cssSelector("div.prices");
     By firstSlider = By.linkText("1");
     By secondSlider = By.linkText("2");
-    By followUsFacebook = By.linkText("Facebook");
-    By followUsTwitter = By.linkText("Twitter");
-    By followUsRSS = By.linkText("RSS");
-    By followUsYouTube = By.linkText("YouTube");
-    By wishListSuccessMsg = By.cssSelector("div.success>p.content");
+    By followUsFacebookButton = By.linkText("Facebook");
+    By followUsTwitterButton = By.linkText("Twitter");
+    By followUsRSSButton = By.linkText("RSS");
+    By followUsYouTubeButton = By.linkText("YouTube");
+    By wishListSuccessMessage = By.cssSelector("div.success>p.content");
     By wishListButtons = By.cssSelector("button.add-to-wishlist-button");
     By wishListTab = By.linkText("Wishlist");
 
@@ -50,11 +50,11 @@ public class HomePage extends PageBase{
     public void selectCurrency(){
         selectFromDropDown(currenciesList,"https://demo.nopcommerce.com/changecurrency/6?returnUrl=%2F");
     }
-    public List<String> getItemsPrices(){
+    public List<String> getItemsPricesText(){
         List <String> pricesValues = new ArrayList<>();
 
-        for (int i=0; i<findElementsList(itemsPrices).size();i++){
-            String str = findElementsList(itemsPrices).get(i).getText(); //Attribute("value");
+        for (int i = 0; i<findElementsList(itemsPricesText).size(); i++){
+            String str = findElementsList(itemsPricesText).get(i).getText();
             pricesValues.add(str);
         }
         return pricesValues;
@@ -66,16 +66,16 @@ public class HomePage extends PageBase{
         clickOnElement(secondSlider);
     }
     public void clickOnFollowUsFacebook (){
-        clickOnElement(followUsFacebook);
+        clickOnElement(followUsFacebookButton);
     }
     public void clickOnFollowUsTwitter (){
-        clickOnElement(followUsTwitter);
+        clickOnElement(followUsTwitterButton);
     }
     public void clickOnFollowUsRSS (){
-        clickOnElement(followUsRSS);
+        clickOnElement(followUsRSSButton);
     }
     public void clickOnFollowUsYouTube (){
-        clickOnElement(followUsYouTube);
+        clickOnElement(followUsYouTubeButton);
     }
     public void clickOnSpecificProductWishList(int productIndex){
         for (int i=0; i<findElementsList(wishListButtons).size();i++) {
@@ -87,11 +87,11 @@ public class HomePage extends PageBase{
                 continue;
         }
     }
-    public String isWishListSuccessMsgDisplayed(){
-        return getElementText(wishListSuccessMsg);
+    public String isWishListSuccessMessageDisplayed(){
+        return getElementText(wishListSuccessMessage);
     }
-    public void waitWishListSuccessMsgBecomesInvisible(){
-        waitElementToBeInvisible(wishListSuccessMsg);
+    public void waitWishListSuccessMessageBecomesInvisible(){
+        waitElementToBeInvisible(wishListSuccessMessage);
     }
     public void clickOnWishListTab(){
         clickOnElement(wishListTab);

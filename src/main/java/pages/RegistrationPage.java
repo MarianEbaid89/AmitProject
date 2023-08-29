@@ -8,49 +8,49 @@ public class RegistrationPage extends PageBase{
         super(driver);
     }
     // add element type at the end of the locator name, ex confirmPassword should be confirmPasswordField
-    By genderMale = By.id("gender-male");
-    By genderFemale = By.id("gender-female");
-    By firstName = By.id("FirstName");
-    By lastName = By.id("LastName");
-    By birthDay= By.name("DateOfBirthDay");
-    By birthMonth = By.name("DateOfBirthMonth");
-    By birthYear = By.name("DateOfBirthYear");
-    By email = By.id("Email");
-    By company = By.id("Company");
-    By newsLetter = By.id("Newsletter");
-    By password = By.id("Password");
-    By confirmPassword = By.id("ConfirmPassword");
+    By genderMaleRadioButton = By.id("gender-male");
+    By genderFemaleRadioButton = By.id("gender-female");
+    By firstNameField = By.id("FirstName");
+    By lastNameField = By.id("LastName");
+    By birthDayList = By.name("DateOfBirthDay");
+    By birthMonthList = By.name("DateOfBirthMonth");
+    By birthYearList = By.name("DateOfBirthYear");
+    By emailField = By.id("Email");
+    By companyField = By.id("Company");
+    By newsLetterCheckBox = By.id("Newsletter");
+    By passwordField = By.id("Password");
+    By confirmedPasswordField = By.id("ConfirmPassword");
     By registerButton = By.id("register-button");
     By successMessage = By.cssSelector("div.result");
     public void selectGender(){
-        clickOnElement(genderFemale);
+        clickOnElement(genderFemaleRadioButton);
     }
-    public void enterFirstName(){
-        setElementText(firstName,"automation");
+    public void enterFirstName(String firstNameText){
+        setElementText(firstNameField, firstNameText);
     }
-    public void enterLastName(){
-        setElementText(lastName,"tester");
+    public void enterLastName(String lastNameText){
+        setElementText(lastNameField,lastNameText);
     }
-    public void selectDayOfBirth(){
-        selectFromDropDown(birthDay,"7");
+    public void selectDayOfBirth(String dayText){
+        selectFromDropDown(birthDayList,dayText);
     }
-    public void selectMonthOfBirth(){
-        selectFromDropDown(birthMonth,"1");
+    public void selectMonthOfBirth(String monthText){
+        selectFromDropDown(birthMonthList,monthText);
     }
-    public void selectYearOfBirth(){
-        selectFromDropDown(birthYear,"1989");
+    public void selectYearOfBirth(String yearText){
+        selectFromDropDown(birthYearList,yearText);
     }
-    public void enterEmail(){
-        setElementText(email,"test@example.com");
+    public void enterEmail(String emailText){
+        setElementText(emailField,emailText);
     }
-    public void enterPassword(){
-        setElementText(password,"P@ssw0rd");
+    public void enterPassword(String passwordText){
+        setElementText(passwordField,passwordText);
     }
-    public void enterCompany(){
-        setElementText(company,"AMIT");
+    public void enterCompany(String companyText){
+        setElementText(companyField,companyText);
     }
-    public void enterConfirmPassword(){
-        setElementText(confirmPassword,"P@ssw0rd");
+    public void enterConfirmedPassword(String confirmedPassword){
+        setElementText(confirmedPasswordField,confirmedPassword);
     }
     public void clickRegister(){
         clickOnElement(registerButton);
